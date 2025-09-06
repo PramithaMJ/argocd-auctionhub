@@ -20,7 +20,7 @@ spec:
       - name: dockerhub-secret
       containers:
       - name: listings
-        image: pramithamj/auction-website-ms-listing:latest
+        image: pramithamj/auction-website-ms-listing:v1.0.80-a60f133
         ports:
         - containerPort: 3103
         env:

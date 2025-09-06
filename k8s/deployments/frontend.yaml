@@ -20,7 +20,7 @@ spec:
       - name: dockerhub-secret
       containers:
       - name: frontend
-        image: pramithamj/auction-website-ms-frontend:latest
+        image: pramithamj/auction-website-ms-frontend:v1.0.80-a60f133
         ports:
         - containerPort: 3000
         env:

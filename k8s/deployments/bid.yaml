@@ -20,7 +20,7 @@ spec:
       - name: dockerhub-secret
       containers:
       - name: bid
-        image: pramithamj/auction-website-ms-bid:latest
+        image: pramithamj/auction-website-ms-bid:v1.0.80-a60f133
         ports:
         - containerPort: 3102
         env:

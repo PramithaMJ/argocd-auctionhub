@@ -20,7 +20,7 @@ spec:
       - name: dockerhub-secret
       containers:
       - name: expiration
-        image: pramithamj/auction-website-ms-expiration:latest
+        image: pramithamj/auction-website-ms-expiration:v1.0.80-a60f133
         ports:
         - containerPort: 3107
         env:

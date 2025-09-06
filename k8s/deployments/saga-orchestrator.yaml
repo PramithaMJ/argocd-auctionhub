@@ -20,7 +20,7 @@ spec:
       - name: dockerhub-secret
       containers:
       - name: saga-orchestrator
-        image: pramithamj/auction-website-ms-saga-orchestrator:latest
+        image: pramithamj/auction-website-ms-saga-orchestrator:v1.0.80-a60f133
         ports:
         - containerPort: 3108
         env:

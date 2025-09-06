@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-init-scripts
+  namespace: auction-infrastructure
+data:
+  01-init.sql: |
+    -- Initialize database with proper character set and collation
+    -- This script runs when the MySQL container starts for the first time
+
+    -- Set proper character set and collation for all databases
+    SET NAMES utf8mb4;
+    SET CHARACTER SET utf8mb4;
+
+    -- Create auction user with limited privileges (principle of least privilege)
+    CREATE USER IF NOT EXISTS 'auctionuser'@'%' IDENTIFIED BY 'auction_secure_pass_2024';
+    
+    -- Grant only necessary privileges on the specific database
+    GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON ${MYSQL_DATABASE}.* TO 'auctionuser'@'%';
+    FLUSH PRIVILEGES;
+
+    -- Set session variables for better MySQL compatibility
+    SET sql_mode = '';
+    SET GLOBAL sql_mode = '';
+
+    -- Set timezone
+    SET time_zone = '+00:00';
